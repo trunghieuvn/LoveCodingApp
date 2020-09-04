@@ -1,6 +1,6 @@
 package com.hieu.domain.dao
 
-import com.hieu.domain.entity.NewsItem
+import com.hieu.domain.entitys.NewsItem
 import io.reactivex.Completable
 import io.reactivex.Observable
 

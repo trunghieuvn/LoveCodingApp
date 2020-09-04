@@ -1,7 +1,7 @@
 package com.hieu.domain.usecases
 
 import com.hieu.domain.dao.NewsRepo
-import com.hieu.domain.entity.NewsItem
+import com.hieu.domain.entitys.NewsItem
 import io.reactivex.Completable
 
 interface BookmarkNewsUseCase {

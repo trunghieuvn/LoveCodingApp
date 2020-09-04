@@ -1,4 +1,4 @@
-package com.hieu.lovecodinngapp
+package com.hieu.lovecodinngapp.mvp
 
 import com.hieu.domain.dao.NewsRepo
 import com.hieu.domain.dao.NewsRepoImpl
@@ -9,11 +9,14 @@ import com.hieu.domain.usecases.RetrieveNewsItemUseCaseImpl
 
 object SuperProvider {
     fun providePresenter () : Presenter {
-        return MainPresenter(provideGetAllNewsUserCase(), schedulerProvider()  )
+        return MainPresenter(
+            provideGetAllNewsUserCase(),
+            schedulerProvider()
+        )
     }
 
     private fun schedulerProvider() : ScheduleProvider {
-        return  ScheduleProviderImpl()
+        return ScheduleProviderImpl()
     }
 
     private fun provideGetAllNewsUserCase() : RetrieveNewsItemUseCase {

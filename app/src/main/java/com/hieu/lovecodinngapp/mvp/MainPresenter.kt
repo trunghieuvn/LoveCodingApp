@@ -1,4 +1,4 @@
-package com.hieu.lovecodinngapp
+package com.hieu.lovecodinngapp.mvp
 
 import com.hieu.domain.usecases.RetrieveNewsItemUseCase
 import io.reactivex.disposables.CompositeDisposable
