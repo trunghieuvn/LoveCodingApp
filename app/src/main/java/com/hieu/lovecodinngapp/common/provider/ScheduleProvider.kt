@@ -1,4 +1,4 @@
-package com.hieu.lovecodinngapp.mvp
+package com.hieu.lovecodinngapp.common.provider
 
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers

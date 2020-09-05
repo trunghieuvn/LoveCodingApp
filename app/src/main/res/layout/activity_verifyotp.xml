@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="com.hieu.lovecodinngapp.common.utils.RegexUtils"/>
         <variable
             name="viewModel"
-            type="com.hieu.lovecodinngapp.features.auth.otp.OtpCodeViewModel" />
+            type="com.hieu.lovecodinngapp.features.auth.otpcode.VerifyOtpCodeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/activity_verify_otpcode"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".mvp.MainActivity">
+        tools:context=".features.auth.otpcode.VerifyOtpActivity">
 
         <TextView
             android:background="@color/colorAccent"
@@ -21,7 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Welcome to TDD Testing!"
+            android:text="Please Input your OTP Code from your email"
+            android:textSize="28dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -33,11 +34,15 @@
             android:id="@+id/edtOtpCode"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
             android:hint="Enter your Email"
             android:singleLine="true"
             android:imeOptions="actionDone"
-            android:layout_marginBottom="20dp"
-            android:text="@={viewModel.otpCodeValue}"
+            android:clickable="true"
+            android:inputType="numberPassword"
+            android:focusableInTouchMode="true"
+            android:text="@={viewModel.textInput}"
+            android:onTextChanged="@{viewModel::onTextInputChange}"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             app:layout_constraintBottom_toTopOf="@+id/btnSubmit"/>
 
@@ -45,11 +50,13 @@
             android:id="@+id/btnSubmit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="OTP Code"
+            android:text="Submit"
             android:background="@drawable/border_button"
             android:layout_marginBottom="10dp"
             android:layout_marginHorizontal="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:enabled="@{viewModel.enable}"/>
+            android:enabled="@{viewModel.btnEnable}"
+            android:onClick="@{()->viewModel.onTapBtn()}"
+         />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

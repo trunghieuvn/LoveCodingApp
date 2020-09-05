@@ -1,0 +1,1 @@
+./gradlew clean jacocoTestReport && open ./app/build/reports/coverage/debug/index.html
