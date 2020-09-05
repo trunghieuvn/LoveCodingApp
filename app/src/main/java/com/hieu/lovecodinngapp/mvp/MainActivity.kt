@@ -1,20 +1,27 @@
-package com.hieu.lovecodinngapp
+package com.hieu.lovecodinngapp.mvp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.hieu.domain.entity.NewsItem
+import com.hieu.domain.entitys.NewsItem
 
 // -------- MVP pattern --------
-class MainActivity : AppCompatActivity() , View {
+
+// View: (correct interaction from user)
+//  - Validator input,
+//  - Change UI inline
+//
+class MainActivity : AppCompatActivity(), View {
     private val presenter by lazy { SuperProvider.providePresenter() }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        presenter.attachView(this)
-        presenter.presentNewsList()
+
+
+//        presenter.attachView(this)
+//        presenter.presentNewsList()
     }
 
     override fun bindNewsList(newsItems: List<NewsItem>) {

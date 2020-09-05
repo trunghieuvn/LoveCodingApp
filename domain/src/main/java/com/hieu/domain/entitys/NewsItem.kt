@@ -1,4 +1,4 @@
-package com.hieu.domain.entity
+package com.hieu.domain.entitys
 
 import kotlin.math.abs
 

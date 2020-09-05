@@ -1,13 +1,13 @@
-package com.hieu.lovecodinngapp
+package com.hieu.lovecodinngapp.mvp
 
 import com.hieu.domain.usecases.RetrieveNewsItemUseCase
+import com.hieu.lovecodinngapp.common.provider.ScheduleProvider
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 
 class MainPresenter(
     private val usecase : RetrieveNewsItemUseCase,
     private val scheduleProvider : ScheduleProvider
-
 ) : Presenter {
 
     private lateinit var screen : View
